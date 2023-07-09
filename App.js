@@ -10,6 +10,7 @@ export default function App() {
 
   function startAddGoalHandler() {
     setModalIsVisible(true);
+    console.log(goals);
   }
 
   function endAddGoalHandler() {
@@ -25,12 +26,14 @@ export default function App() {
 
       endAddGoalHandler();
     }
+
+    console.log(goals);
   }
 
   function deleteHandler(id) {
     setGoals((currentCourseGoals) => {
       return currentCourseGoals.filter((element) => {
-        element.id !== id;
+        return element.id !== id;
       });
     });
   }
